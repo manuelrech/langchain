@@ -346,6 +346,7 @@ class SQLDatabase:
             # add create table command
             create_table = str(CreateTable(table).compile(self._engine))
             table_info =  table_info + f"{table} DDL:{create_table.rstrip()}" if self._custom_and_default_info else f"{table} DDL:{create_table.rstrip()}"
+
             has_extra_info = (
                 self._indexes_in_table_info or self._sample_rows_in_table_info
             )
